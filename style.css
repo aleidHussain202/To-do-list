@@ -1,0 +1,19 @@
+/* 
+  TODO: Add your styles here!
+  
+  Try to:
+  1. Reset margins and padding ( * { margin: 0; padding: 0; } )
+  2. Give the body a nice background color
+  3. Style the container to be centered (display: flex; justify-content: center; ...)
+  4. Style your input and button to look modern
+  5. Style the list items
+*/
+
+body {
+    font-family: sans-serif;
+    /* transition: background-color 0.3s; */
+}
+
+.container {
+    /* Add some max-width and margin */
+}
