@@ -1,19 +1,105 @@
 /* 
-  TODO: Add your styles here!
-  
-  Try to:
-  1. Reset margins and padding ( * { margin: 0; padding: 0; } )
-  2. Give the body a nice background color
-  3. Style the container to be centered (display: flex; justify-content: center; ...)
-  4. Style your input and button to look modern
-  5. Style the list items
+  STEP 1: Basic setup 
+  - Reset margins/paddings
+  - Set a font family
 */
-
-body {
-    font-family: sans-serif;
-    /* transition: background-color 0.3s; */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    /* TODO: Pick a background color and font */
+    background-color: #2c5e41; 
+    font-family: sans-serif;
+    
+    /* TODO: Center the container on the screen */
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+/* 
+  STEP 2: Main Container 
+*/
 .container {
-    /* Add some max-width and margin */
+    background-color: rgb(14, 63, 153);
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* 
+  STEP 3: Input Section 
+  - Style the input-group to layout the input and button
+*/
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: gray;
+}
+
+#task-input {
+    /* TODO: Make the input look nice (padding, border radius) */
+    flex: 1; /* This makes it take up remaining space */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#add-btn {
+    /* TODO: Style the add button */
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green */
+    color: rgb(224, 219, 219);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#add-btn:hover {
+    background-color: #45a049;
+}
+
+/* 
+  STEP 4: Task List 
+  - Remove default list bullets
+*/
+#task-list {
+    list-style: none;
+}
+
+/* 
+  STEP 5: Individual Task Items 
+  - How should each row look?
+*/
+.task-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-item.completed span {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.delete-btn {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
 }

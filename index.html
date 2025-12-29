@@ -4,30 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My To-Do List</title>
-    <!-- Link your CSS file here -->
     <link rel="stylesheet" href="style.css">
+    <!-- OPTIONAL: Add a font from Google Fonts here -->
 </head>
 <body>
-    <!-- 
-      TODO: Build your Layout here!
-      You will need:
-      1. A connection to your CSS file (already added above)
-      2. An input field to type new tasks
-      3. A button to add the task
-      4. A generic container (like a <ul> or <div>) to hold the list of tasks
-      5. A connection to your script.js file at the bottom of the body
-    -->
 
+    <!-- 
+      STEP 1: Create the Main Container
+      - Add a div with class "container" to hold everything.
+      - Inside it, add a Header (h1) for your title.
+    -->
     <div class="container">
         <h1>My To-Do List</h1>
-        
-        <!-- Add your input and button here -->
 
-        <!-- Add your list container here -->
-        
+        <!-- 
+          STEP 2: Create the Input Section
+          - Add a div with class "input-group".
+          - Inside it, add an <input> tag with id="task-input".
+          - Add a <button> tag with id="add-btn".
+        -->
+        <div class="input-group">
+            <!-- Your input and button go here -->
+             <input type="text" id="task-input">
+             <button id="add-btn">Add</button>
+            
+        </div>
+
+        <div class="filters">
+            <button>
+                All
+            </button>
+            <button>
+                Active
+            </button>
+            <button>
+                Completed
+            </button>
+        </div>
+        <!-- 
+          STEP 3: Create the Filter Buttons (Optional)
+          - Add a div with class "filters".
+          - Add buttons for "All", "Active", and "Completed".
+        -->
+
+        <!-- 
+          STEP 4: Create the Task List
+          - Add a <ul> (unordered list) with id="task-list".
+          - This will be empty for now. JavaScript will add items here later!
+        -->
+        <ul id="task-list">
+            <!-- Example of what a task will look like (for styling purposes): -->
+            <!-- 
+            <li class="task-item">
+                <span>Test Task</span>
+                <button class="delete-btn">X</button>
+            </li> 
+            -->
+        </ul>
+
     </div>
 
-    <!-- Link your JavaScript file here -->
     <script src="script.js"></script>
 </body>
 </html>
