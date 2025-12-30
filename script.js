@@ -130,3 +130,100 @@ document.getElementById("task-input").addEventListener("keypress", (event) => {
 //    - document.getElementById("filter-all").addEventListener("click", () => filterTasks("all"))
 //    - document.getElementById("filter-active").addEventListener("click", () => filterTasks("active"))
 //    - document.getElementById("filter-completed").addEventListener("click", () => filterTasks("completed"))
+
+function filterTasks(status){
+   const list = document.querySelectorAll("#task-list li");
+   list.forEach(task => {
+      if(status === "all"){
+         task.style.display = "flex";
+      }
+      if(status === "completed"){
+         if(task.classList.contains("completed")){
+            if(task.style.display === "none"){
+               task.style.display = "flex";
+            }
+         }else{
+            task.style.display = "none";
+         }
+      }
+      else if(status === "active"){
+         if(task.classList.contains("completed")){
+            task.style.display = "none";
+         }else{
+            task.style.display = "flex";
+         }
+      }
+   })
+}
+
+document.getElementById("filter-all").addEventListener("click", () => filterTasks("all"))
+document.getElementById("filter-active").addEventListener("click", () => filterTasks("active"))
+document.getElementById("filter-completed").addEventListener("click", () => filterTasks("completed"))
+
+
+
+
+// ***************************************************
+
+function saveTasks() {
+   const tasks = [];
+   
+   // HINT: Loop through all li elements in task-list
+   // For each task, get the text from the span and check if it has "completed" class
+   // Push an object { text: "...", completed: true/false } into the tasks array
+   
+   // TODO: Select all li elements from #task-list
+   // TODO: Loop with .forEach()
+   // TODO: Get text with .querySelector("span").textContent
+   // TODO: Check completed with .classList.contains("completed")
+
+   const list = document.querySelectorAll("#task-list li");
+   
+   list.forEach(task => {
+      const text = task.querySelector("span").textContent;
+      const completed = task.classList.contains("completed");
+      tasks.push({text, completed});
+   })
+   
+   localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+
+
+function loadTasks() {
+   const saved = localStorage.getItem("tasks");
+   if(!saved) return;
+   
+   const tasks = JSON.parse(saved);
+   
+   // HINT: Loop through each task object and recreate the li
+   // Reuse the same logic from getInputTask() but use taskData.text instead of input
+   // If taskData.completed is true, add the "completed" class
+   
+     
+
+
+   tasks.forEach(taskData => {
+      // TODO: Create li, span, delete button (same as getInputTask)
+      // TODO: If taskData.completed, add "completed" class to li
+      const list = document.getElementById("task-list");
+      const li = document.createElement("li");
+      li.className = "task-item";
+      const textSpan = document.createElement("span");
+      textSpan.textContent = taskData.text;
+      const delBtn = document.createElement("button");
+      delBtn.textContent = "X";
+      delBtn.className = "delete-btn";
+      delBtn.addEventListener("click", () => {
+         li.remove();
+         stopPropagation();
+      })
+      li.appendChild(textSpan);
+      li.appendChild(delBtn);
+      list.appendChild(li);
+      document.getElementById("task-input").value = "";
+      li.addEventListener("click", () => {
+         li.classList.toggle("completed");
+      })
+   });
+}
