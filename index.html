@@ -5,26 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My To-Do List</title>
     <link rel="stylesheet" href="style.css">
-    <!-- OPTIONAL: Add a font from Google Fonts here -->
+    <!-- Google Fonts: Preconnect and load 'Shadows Into Light Two' for the handwritten aesthetic -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- 
-      STEP 1: Create the Main Container
-      - Add a div with class "container" to hold everything.
-      - Inside it, add a Header (h1) for your title.
-    -->
+    <!-- Main Application Container -->
     <div class="container">
         <h1>My To-Do List</h1>
 
-        <!-- 
-          STEP 2: Create the Input Section
-          - Add a div with class "input-group".
-          - Inside it, add an <input> tag with id="task-input".
-          - Add a <button> tag with id="add-btn".
-        -->
+        <!-- Input Section: Text field and 'Add' button -->
         <div class="input-group">
-            <!-- Your input and button go here -->
+
              <input type="text" id="task-input">
              <button id="add-btn">Add</button>
             
@@ -41,26 +36,16 @@
                 Completed
             </button>
         </div>
-        <!-- 
-          STEP 3: Create the Filter Buttons (Optional)
-          - Add a div with class "filters".
-          - Add buttons for "All", "Active", and "Completed".
-        -->
 
-        <!-- 
-          STEP 4: Create the Task List
-          - Add a <ul> (unordered list) with id="task-list".
-          - This will be empty for now. JavaScript will add items here later!
-        -->
+
+        <!-- Task List: Dynamic list of items -->
         <ul id="task-list">
-            <!-- Example of what a task will look like (for styling purposes): -->
-            <!-- 
-            <li class="task-item">
-                <span>Test Task</span>
-                <button class="delete-btn">X</button>
-            </li> 
-            -->
+
         </ul>
+
+        <div>
+            <button id="clear-completed">Clear Completed</button>
+        </div>
 
     </div>
 
